@@ -3,7 +3,9 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  maptileKey: 'SoL71Zyf7SmLrVYWC7fQ',
+  smartStyle: 'https://api.maptiler.com/maps/eef16200-c4cc-4285-9370-c71ca24bb42d/style.json?key='
 };
 
 /*

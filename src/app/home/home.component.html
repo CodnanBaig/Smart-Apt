@@ -1,0 +1,13 @@
+<div class="layout">
+    <div class="row g-0">
+        <div class="col-3">
+            <app-properties (showComponent)="showSliderComponent($event)"></app-properties>
+        </div>
+        <div [ngClass]="isShowSlider == true ? 'col-6' : 'col-9'">
+            <app-map></app-map>
+        </div>
+        <div class="col-3" *ngIf="isShowSlider">
+           <app-property-details></app-property-details> 
+        </div>
+    </div>
+</div>

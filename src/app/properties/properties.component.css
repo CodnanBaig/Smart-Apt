@@ -1,0 +1,144 @@
+/* SCROLLER */
+
+/* ===== Scrollbar CSS ===== */
+  /* Firefox */
+  * {
+    scrollbar-width: auto;
+    scrollbar-color: rgb(149, 57, 255) #ffffff;
+  }
+
+  /* Chrome, Edge, and Safari */
+  *::-webkit-scrollbar {
+    width: 16px;
+  }
+
+  *::-webkit-scrollbar-track {
+    background: #ffffff;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background-color: rgb(149, 57, 255);
+    border-radius: 10px;
+    border: 3px solid #ffffff;
+  }
+
+/* FILTERS */
+
+.filters {
+    text-align: center;
+    margin: 0px auto;
+    margin-top: 2%;
+    width: 90%;
+}
+
+mat-option {
+    padding: 0px;
+    margin: 0px auto;
+    width: 100%;
+    text-align: center;
+    height: 60%;
+}
+
+mat-slider {
+    width: 90%;
+    height: 90%;
+}
+
+.mat-slider-thumb-label-text {
+    width: 80%;
+}
+
+mat-form-field {
+    margin-top: 2%;
+    text-align: center !important;
+    background-color: aliceblue;
+    height: 70%;
+}
+
+mat-label, mat-select {
+    text-align: left;
+}
+
+/* LIST */
+
+.list {
+    margin: 0px auto;
+    margin-top: 2%;
+    background-color: #ffffff;
+    height: 79vh;
+    width: 100%;
+    border-radius: 5px;
+    overflow: scroll;
+    text-align: center;
+}
+
+.property {
+    margin: 0px auto;
+    width: 80%;
+    padding-left: 2%;
+    margin-top: 5%;
+    border-radius: 10px;
+}
+
+.property:hover {
+    transition-duration: .5s;
+    border-radius: 10px;
+    background: #ffffff;
+    box-shadow:  6px 6px 15px #666666,
+                 -6px -6px 15px #ffffff;
+}
+
+.details {
+    padding-left: 2%;
+    width: 100%;
+}
+
+.p-name {
+    text-align: left;
+    font-size: 18px;
+    padding-left: 2%;
+    padding-top: 5%;
+    text-decoration: underline;
+}
+
+.p-image {
+    width: 100%;
+}
+
+.p-city {
+    margin-top: 5%;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.p-container {
+    padding-top: 5%;
+    text-align: center;
+}
+
+
+.p-amenity {
+    list-style: none;
+    text-align: left;
+}
+
+.location {
+    text-align: left;
+}
+
+.btn {
+    background-color: rgb(117, 117, 248);
+    color: #ffffff;
+    width: 100%;
+    font-size: 12px;
+    padding-left: 2%;
+}
+
+.dropdown-menu {
+    width: 100%;
+}
+
+.dropdown-item {
+    width: 100%;
+    font-size: 11px;
+}

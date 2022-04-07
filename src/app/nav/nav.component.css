@@ -1,0 +1,14 @@
+/* NAVBAR */
+
+.navbar {
+    background-color: rgb(149, 57, 255);
+}
+
+.navbar-brand {
+    color: white;
+    font-size: 32px;
+    font-weight: 800;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    padding-left: 3%;
+}
