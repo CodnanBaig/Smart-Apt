@@ -1,55 +1,12 @@
-<!-- <div class="filters">
-    <div class="row">
-        <div class="col-6">
-            <mat-form-field appearance="fill">
-                <mat-label>Price</mat-label>
-                <mat-select>
-                    <mat-option>
-                        <mat-slider thumbLabel [displayWith]="formatLabel" tickInterval="1" step="1" min="763"
-                            max="2120" aria-label="units"></mat-slider>
-                    </mat-option>
-                </mat-select>
-            </mat-form-field>
-        </div>
-        <div class="col-6">
-            <mat-form-field appearance="fill">
-                <mat-label>Specs</mat-label>
-                <mat-select>
-                    <div class="plan">
-                        <mat-option>1 Bedroom</mat-option>
-                        <mat-option>2 Bedroom</mat-option>
-                        <mat-option>3 Bedroom</mat-option>
-                    </div>
-                </mat-select>
-            </mat-form-field>
-        </div>
-    </div>
-</div> -->
-<h3 style="text-align: center; font-weight: 500; font-size: 26px; text-decoration: underline;" *ngFor="let agent of agent |async">{{agent.firstname}} {{agent.lastname}} | {{agent.company}}</h3>
-<div class="list">
-    <div class="property" *ngFor="let record of list |async" (click)="openSlider(record)">
-        <p class="p-name">{{ record.name }}</p>
-        <div class="details">
-            <div class="row">
-                <div class="col-7">
-                    <img class="p-image" src="{{ record.photo }}" alt="property image">
-                    <p class="p-city">{{record.streetAddress}}, {{ record.city}}, {{record.state}}</p>
-                </div>
-                <div class="col-4 location">
-                    <div class="p-amenities">
-                        <div class="dropdown">
-                            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1"
-                                data-bs-toggle="dropdown" aria-expanded="true">
-                                Amenities
-                            </button>
-                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                <li class="dropdown-item" *ngFor="let am of record.highValueAmenities">
-                                    {{am}}
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
+<div class="properties">
+    <h3 style="text-align: center; font-weight: 500; font-size: 26px; text-decoration: underline; margin-top: 2%; "
+        *ngFor="let agent of agent |async">{{agent.firstname}} {{agent.lastname}} | {{agent.company}}</h3>
+    <div class="list">
+        <div class="property" *ngFor="let record of list |async" (click)="openSlider(record)">
+            <p class="p-name">{{ record.name }}</p>
+            <div class="details">
+                <img class="p-image" src="{{ record.photo }}" alt="property image">
+                <p class="p-city">{{record.streetAddress}}, {{ record.city}}, {{record.state}}</p>
             </div>
         </div>
     </div>

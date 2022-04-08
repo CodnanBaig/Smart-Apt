@@ -26,9 +26,6 @@ export class PropertyDetailsComponent implements OnInit {
    }
 
   ngOnInit(): void {
-    // this.commonService.currentData.subscribe(res => {
-    //   this.getSpecificFloorPlan(res);
-    // });
     this.getSpecificFloorPlan(this.commonService.data);
   }
 
@@ -36,7 +33,6 @@ export class PropertyDetailsComponent implements OnInit {
     this.store.select(getList).subscribe(response => {
       this.specificDetail = [];
       this.specificDetail = response.find(objs => objs.propertyID == id);
-      console.log(this.specificDetail)
       this.commonService.getLatLong(this.specificDetail?.geocode.Latitude, this.specificDetail?.geocode.Longitude)
     })
   }

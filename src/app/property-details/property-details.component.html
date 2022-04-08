@@ -1,7 +1,37 @@
-<div style="margin-top: 2%;" class="heading">
-    <h1 style="font-size: 32px; text-align: center; color: rgb(117, 117, 248); font-weight: 500;">Floorplans</h1>
-</div>
-
-<div class="plan-cards" *ngFor="let data of specificDetail?.floorplans">
-    <h1>{{data.type}}</h1>
+<div class="property-details">
+    <div style="margin-top: 2%;">
+        <h1 class="heading">Floorplans</h1>
+    </div>
+    <div class="plan-cards">
+        <div class="row">
+            <div class="col-6">
+                <div class="head-container">
+                    <img class="icon" src="/assets/images/bed.png" alt="">
+                    <h1 class="spec-head">Bedrooms</h1>
+                </div>
+                <div *ngFor="let data of specificDetail?.floorplans">
+                    <h3 style="font-weight: 500;">{{data.type}}rooms</h3>
+                    <hr>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="head-container">
+                    <img class="icon" src="/assets/images/dollar.png" alt="">
+                    <h1 class="spec-head">Price</h1>
+                </div>
+                <div *ngFor="let data of specificDetail?.floorplans">
+                    <h3 style="font-weight: 500;">${{data.price}}</h3>
+                    <hr>
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <div style="margin-top: 2%;">
+        <h1 class="heading">Amenities</h1>
+    </div>
+    <div class="amenities" *ngFor="let data of specificDetail?.highValueAmenities">
+        <h3 style="font-weight: 500;">{{data}}</h3>
+        <hr>
+    </div>
 </div>

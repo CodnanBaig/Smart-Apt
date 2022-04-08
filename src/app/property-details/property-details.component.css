@@ -1,0 +1,46 @@
+.property-details {
+    height: 92vh;
+    border: #1f8ceb 3px solid;
+    border-radius: 10px;
+    position: fixed;
+    transition:cubic-bezier(0.445, 0.05, 0.55, 0.95);
+    transition-duration: 1s;
+    z-index: 1;
+    box-shadow: 0.063rem 0 1.25rem 0 black;
+}
+
+.heading {
+    font-size: 32px;
+    text-align: center;
+    color: #1f8ceb;
+    font-weight: 500;
+    text-decoration: underline;
+}
+
+.head-container {
+    text-align: center;
+}
+
+.icon {
+    width: 16%;
+}
+
+.spec-head {
+    font-weight: 500;
+    font-size: 26px;
+    text-decoration: underline;
+}
+
+.plan-cards {
+    width: 80%;
+    margin: 0px auto;
+    margin-top: 5%;
+    padding: 2%;
+}
+
+.amenities {
+    padding-top: 2%;
+    width: 80%;
+    margin: 0px auto;
+    padding-left: 2%;
+}

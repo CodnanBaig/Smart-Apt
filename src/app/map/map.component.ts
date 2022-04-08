@@ -1,5 +1,5 @@
 import { Map, NavigationControl, Marker } from 'maplibre-gl';
-import { Component, OnInit, OnChanges ,ViewChild, ElementRef, AfterViewInit, OnDestroy, SimpleChanges } from '@angular/core';
+import { Component, OnInit, OnChanges, ViewChild, ElementRef, AfterViewInit, OnDestroy, SimpleChanges } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import { Observable } from 'rxjs';
 import { Geocode } from '../models/geocode.model';
@@ -17,21 +17,26 @@ import * as maplibregl from 'maplibre-gl';
 })
 export class MapComponent implements OnInit, AfterViewInit, OnDestroy, OnChanges {
 
-  mapLngLat :any = []
+  mapLngLat: any = []
   lat: any
   long: any
   map!: Map;
   @ViewChild('map')
   private mapContainer!: ElementRef<HTMLElement>;
   public geo: Observable<Geocode[]> | undefined
-  constructor(private store: Store<AppState>, public commonService: CommonServiceService) { 
+  constructor(private store: Store<AppState>, public commonService: CommonServiceService) {
     this.lat = this.commonService.lat.subscribe(res => {
       console.log(res)
     })
     this.long = this.commonService.long.subscribe(res => {
       console.log(res)
     })
-    
+
+    console.log(this.lat,this.long);
+    // if (this.lat && this.long != '') {
+    //   this.zoomLatLong()
+    // }
+
   }
 
   ngOnChanges(changes: SimpleChanges): void {
@@ -58,21 +63,21 @@ export class MapComponent implements OnInit, AfterViewInit, OnDestroy, OnChanges
           .addTo(this.map);
       })
     })
-   }
+  }
 
-   flyTo(map: Map, mapPoint: Geocode): any {
-    let val: maplibregl.LngLat = new maplibregl.LngLat(parseFloat(this.long), parseFloat(this.lat));
-    map.flyTo({
-      center: val,
-      duration: 2000,
-      zoom: 15,
+  zoomLatLong() {
+    this.map = new Map({
+      container: this.mapContainer.nativeElement,
+      style: `${environment.smartStyle}${environment.maptileKey}`,
+      center: [parseFloat(this.long), parseFloat(this.lat)],
+      zoom: 12
     });
-   }
+  }
   ngOnDestroy(): void {
     this.map?.remove();
   }
 
-  
+
 
 }
 

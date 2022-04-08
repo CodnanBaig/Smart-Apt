@@ -18,6 +18,7 @@ export class HomeComponent implements OnInit {
 
   showSliderComponent(event: boolean){
     this.isShowSlider = event;
+    this.isShowSlider!= event
   }
 
 }
