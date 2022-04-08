@@ -1,14 +1,13 @@
 import { Map, NavigationControl, Marker } from 'maplibre-gl';
-import { Component, OnInit, OnChanges, ViewChild, ElementRef, AfterViewInit, OnDestroy, SimpleChanges } from '@angular/core';
+import { Component, OnInit, ViewChild, OnChanges, ElementRef, AfterViewInit, OnDestroy, SimpleChanges } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import { Observable } from 'rxjs';
 import { Geocode } from '../models/geocode.model';
 import { Store } from '@ngrx/store';
 import { AppState } from '../state/app.state';
 import { getMap } from '../state/map/map.selector';
-import { getList } from '../state/listings/listings.selectors';
 import { CommonServiceService } from '../service/common-service.service';
-import * as maplibregl from 'maplibre-gl';
+
 
 @Component({
   selector: 'app-map',
@@ -20,27 +19,21 @@ export class MapComponent implements OnInit, AfterViewInit, OnDestroy, OnChanges
   mapLngLat: any = []
   lat: any
   long: any
+  coOrd: any
   map!: Map;
   @ViewChild('map')
   private mapContainer!: ElementRef<HTMLElement>;
   public geo: Observable<Geocode[]> | undefined
+
   constructor(private store: Store<AppState>, public commonService: CommonServiceService) {
-    this.lat = this.commonService.lat.subscribe(res => {
-      console.log(res)
-    })
-    this.long = this.commonService.long.subscribe(res => {
-      console.log(res)
-    })
+    this.coOrd = commonService.setLatLong(this.lat, this.long)
 
-    console.log(this.lat,this.long);
-    // if (this.lat && this.long != '') {
-    //   this.zoomLatLong()
-    // }
-
+    this.commonService.coOrdinateObject.subscribe(res => {
+      this.zoomLatLong(res['long'], res['lat'])
+    });
   }
 
   ngOnChanges(changes: SimpleChanges): void {
-    console.log("resss => ", this.commonService.data)
   }
 
   ngOnInit(): void {
@@ -65,19 +58,17 @@ export class MapComponent implements OnInit, AfterViewInit, OnDestroy, OnChanges
     })
   }
 
-  zoomLatLong() {
-    this.map = new Map({
-      container: this.mapContainer.nativeElement,
-      style: `${environment.smartStyle}${environment.maptileKey}`,
-      center: [parseFloat(this.long), parseFloat(this.lat)],
-      zoom: 12
-    });
-  }
   ngOnDestroy(): void {
     this.map?.remove();
   }
 
-
+  zoomLatLong(long: any, lat: any){
+    this.map.flyTo({
+      center: [long, lat],
+      zoom: 20,
+      speed: 1
+    })
+  }
 
 }
 

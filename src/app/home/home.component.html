@@ -3,10 +3,10 @@
         <div class="col-3">
             <app-properties (showComponent)="showSliderComponent($event)"></app-properties>
         </div>
-        <div [ngClass]="isShowSlider == true ? 'col-6' : 'col-9'">
+        <div [ngClass]="commonService.isShowSlider == true ? 'col-6' : 'col-9'">
             <app-map></app-map>
         </div>
-        <div class="col-3" *ngIf="isShowSlider">
+        <div class="col-3" *ngIf="commonService.isShowSlider">
            <app-property-details></app-property-details> 
         </div>
     </div>

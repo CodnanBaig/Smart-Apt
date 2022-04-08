@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CommonServiceService } from '../service/common-service.service';
 
 @Component({
   selector: 'app-home',
@@ -7,18 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  isShowSlider: boolean = false;
+  // isShowSlider: boolean = false;
 
   parentData: any = [];
 
-  constructor() { }
+  constructor(public commonService: CommonServiceService) { }
 
   ngOnInit(): void {
   }
 
   showSliderComponent(event: boolean){
-    this.isShowSlider = event;
-    this.isShowSlider!= event
+    this.commonService.isShowSlider = event;
   }
 
 }

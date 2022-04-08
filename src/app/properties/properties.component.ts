@@ -35,16 +35,9 @@ export class PropertiesComponent implements OnInit {
   }
 
   openSlider(obj: any) {
-
-    // this.router.navigate(['/floor-plan', obj.propertyID]);
-    
     this.commonService.setData(obj.propertyID);
+    this.commonService.setLatLong(obj['geocode']['Latitude'], obj['geocode']['Longitude']);
     this.showComponent.emit(true);
-    
-  }
-
-  sendMapData(obj: any) {
-    this.commonService.setData(obj.geocode)
   }
 
 }

@@ -17,24 +17,25 @@ export class PropertyDetailsComponent implements OnInit {
 
   specificDetail: any = [];
   id: any;
+  @Output() showComponent = new EventEmitter<boolean>(false);
 
   details: Observable<Listings[]> | undefined
   constructor(private store: Store<AppState>, public commonService: CommonServiceService) {
-    this.commonService.data.subscribe(res => {
-      this.getSpecificFloorPlan(res)
-    })
-   }
 
-  ngOnInit(): void {
-    this.getSpecificFloorPlan(this.commonService.data);
   }
 
-  getSpecificFloorPlan(id: any) {
-    this.store.select(getList).subscribe(response => {
-      this.specificDetail = [];
-      this.specificDetail = response.find(objs => objs.propertyID == id);
-      this.commonService.getLatLong(this.specificDetail?.geocode.Latitude, this.specificDetail?.geocode.Longitude)
+  ngOnInit(): void {
+    this.commonService.data.subscribe(res => {
+      this.store.select(getList).subscribe(response => {
+        this.specificDetail = [];
+        this.specificDetail = response.find(objs => objs.propertyID == res);
+      })
     })
+  }
+
+  closeSlide() {
+    this.showComponent.emit(false);
+    this.commonService.isShowSlider = false;
   }
 
 }

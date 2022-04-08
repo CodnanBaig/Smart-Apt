@@ -1,5 +1,8 @@
 <div class="property-details">
-    <div style="margin-top: 2%;">
+    <div style="margin-top: 2%;text-align: center; display: inline;">
+        <div class="toggle" >
+            <img class="button" src="/assets/images/next.png" alt="" (click)="closeSlide()">
+        </div>
         <h1 class="heading">Floorplans</h1>
     </div>
     <div class="plan-cards">
@@ -35,3 +38,12 @@
         <hr>
     </div>
 </div>
+
+<!-- <script>
+    const toggle = document.getElementById("button");
+    const sidebar = document.getElementById("property-details")
+    toggle.onclick = function(){
+        toggle.classList.toggle('active')
+        sidebar.classList.toggle('active')
+    }
+</script> -->
