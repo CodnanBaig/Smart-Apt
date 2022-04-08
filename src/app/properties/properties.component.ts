@@ -7,8 +7,7 @@ import { CommonServiceService } from '../service/common-service.service';
 import { showAgent } from '../state/agent/agent.selector';
 import { AppState } from '../state/app.state';
 import { getList } from '../state/listings/listings.selectors';
-import * as _ from 'lodash'
-import { Floorplan } from '../models/floorplan.model';
+
 @Component({
   selector: 'app-properties',
   templateUrl: './properties.component.html',
@@ -25,15 +24,15 @@ export class PropertiesComponent implements OnInit {
 
   constructor(private store: Store<AppState>, public commonService: CommonServiceService) { }
 
+  // 🚀 LOADS THE AGENT INFO AND THE LISTINGS
+
   ngOnInit(): void {
     this.list = this.store.select(getList)
     this.agent = this.store.select(showAgent)
   }
 
-  formatLabel(value: number) {
-    return '$' + value;
-  }
-
+  // 🚀 THIS FUNCTION OPENS THE PROPERTY DETAILS COMPONENT WHILE ALSO SENDING THE REQUIRED DATA THROUGH PROPERTY ID
+  
   openSlider(obj: any) {
     this.commonService.setData(obj.propertyID);
     this.commonService.setLatLong(obj['geocode']['Latitude'], obj['geocode']['Longitude']);

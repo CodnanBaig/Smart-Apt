@@ -1,6 +1,8 @@
 import { Floorplan } from "./floorplan.model";
 import { Geocode } from "./geocode.model";
 
+// 🚀 MODEL FOR LISTINGS
+
 export interface Listings {
     listID: number;
     order: number;

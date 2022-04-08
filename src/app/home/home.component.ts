@@ -17,6 +17,8 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  // 🚀 SHOWS THE PROPERTY DETAILS COMPONENT ON THE RIGHT
+
   showSliderComponent(event: boolean){
     this.commonService.isShowSlider = event;
   }

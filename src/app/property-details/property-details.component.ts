@@ -22,6 +22,8 @@ export class PropertyDetailsComponent implements OnInit {
 
   }
 
+  // 🚀 LOADS AND RETURNS THE DETAILS SENT THROUGH COMMON SERVICE ON PROPERTY CLICK FROM THE PROPERTY COMPONENT
+
   ngOnInit(): void {
     this.commonService.data.subscribe(res => {
       this.store.select(getList).subscribe(response => {
@@ -31,6 +33,8 @@ export class PropertyDetailsComponent implements OnInit {
     })
   }
 
+  // 🚀 CLOSES THE PROPERTY DETAILS COMPONENT
+  
   closeSlide() {
     this.showComponent.emit(false);
     this.commonService.isShowSlider = false;

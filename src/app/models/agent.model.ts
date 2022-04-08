@@ -1,3 +1,4 @@
+// 🚀 MODEL FOR AGENT/BROKER INFORMATION
 
 export interface AgentInfo {
     accountID: number;

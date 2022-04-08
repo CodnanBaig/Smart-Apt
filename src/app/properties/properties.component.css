@@ -1,4 +1,4 @@
-/* PROPERTIES */
+/* 🚀 PROPERTIES */
 .properties {
     border: #1f8ceb 3px solid;
     border-radius: 10px;
@@ -10,7 +10,7 @@
 }
 
 
-/* SCROLLER */
+/* 🚀 SCROLLER */
 
 /* ===== Scrollbar CSS ===== */
   /* Firefox */
@@ -34,7 +34,7 @@
     border: 3px solid #ffffff;
   }
 
-/* LIST */
+/* 🚀 LIST */
 
 .list {
     margin: 0px auto;
@@ -97,23 +97,4 @@
     text-align: left;
 }
 
-.location {
-    text-align: left;
-}
 
-.btn {
-    background-color: #1f8ceb;
-    color: #ffffff;
-    width: 100%;
-    font-size: 12px;
-    padding-left: 2%;
-}
-
-.dropdown-menu {
-    width: 100%;
-}
-
-.dropdown-item {
-    width: 100%;
-    font-size: 11px;
-}

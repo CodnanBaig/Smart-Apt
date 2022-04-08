@@ -1,3 +1,30 @@
+/* 🚀 SCROLLER */
+
+/* ===== Scrollbar CSS ===== */
+  /* Firefox */
+  * {
+    scrollbar-width: auto;
+    scrollbar-color: #1f8ceb #ffffff;
+  }
+
+  /* Chrome, Edge, and Safari */
+  *::-webkit-scrollbar {
+    width: 16px;
+  }
+
+  *::-webkit-scrollbar-track {
+    background: #ffffff;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background-color: #1f8ceb;
+    border-radius: 10px;
+    border: 3px solid #ffffff;
+  }
+
+
+/* 🚀 STYLING FOR THE PROPERTY DETAILS COMPONENT */
+
 .property-details {
     height: 92vh;
     border: #1f8ceb 3px solid;
@@ -7,6 +34,7 @@
     transition-duration: 1s;
     z-index: 1;
     box-shadow: 0.063rem 0 1.25rem 0 black;
+    overflow: scroll;
 }
 
 .button {

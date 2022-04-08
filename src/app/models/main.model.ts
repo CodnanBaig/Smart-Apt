@@ -1,4 +1,4 @@
-
+// 🚀 THIS IS THE MAIN MODEL FOR REFERENCE
 
 export interface AgentInfo {
     accountID: number;

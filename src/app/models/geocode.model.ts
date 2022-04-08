@@ -1,3 +1,5 @@
+// 🚀 MODEL FOR PROPERTY COORDINATES
+
 export interface Geocode {
     Longitude: string;
     Latitude: string;
