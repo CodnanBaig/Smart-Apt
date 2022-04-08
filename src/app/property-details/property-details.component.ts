@@ -1,12 +1,10 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { Listings } from '../models/listings.model';
 import { CommonServiceService } from '../service/common-service.service';
 import { AppState } from '../state/app.state';
 import { getList } from '../state/listings/listings.selectors';
-import { getListSpecific } from '../state/property-details/property-details.selector';
 
 @Component({
   selector: 'app-property-details',

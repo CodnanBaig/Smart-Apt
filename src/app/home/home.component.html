@@ -6,7 +6,7 @@
         <div [ngClass]="commonService.isShowSlider == true ? 'col-6' : 'col-9'">
             <app-map></app-map>
         </div>
-        <div class="col-3" *ngIf="commonService.isShowSlider">
+        <div *ngIf="commonService.isShowSlider" [ngClass]="commonService.isShowSlider == true ? 'col-3' : 'col-0'">
            <app-property-details></app-property-details> 
         </div>
     </div>
